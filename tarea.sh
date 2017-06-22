@@ -47,7 +47,17 @@ if [ "$iniciar" = 's' ]; then
     done
 
     echo "\nSe ha alcanzado el limite:" $limite
-    echo -n "Presione una tecla para salir."
+    echo "En 60 segundos se terminara el programa.\n"
+
+    reloj=0
+    while [ "$reloj" -le 30 ]
+    do
+        echo "Reloj:" $reloj
+        reloj=$(($reloj+1))
+        sleep 1s
+    done
+
+    echo -n "\nPresione una tecla para salir."
     read salir
 else
     echo "Usted ha salido."
